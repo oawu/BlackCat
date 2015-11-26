@@ -36,61 +36,7 @@ html {
   }
 }
 
-
-
-$catSprite: (W:408, H:199, rows:13, cols:1 , frames:13 , fps:33);
-
-.sprite {
-  position: absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  margin: auto;
-  overflow: hidden;
-}
-
-@mixin sprite($s, $name){
-  width:#{map-get($s, W) + 'px'};
-  height:#{map-get($s, H) + 'px'};
-  > img{
-    position:absolute;
-    transform: translateZ(0);
-    top:0; left:0;
-    animation:#{map-get($s, frames) / map-get($s, fps) + 's'} #{$name + 'SpriteAnim'} infinite step-end;
-  }
-}
-
-@mixin spriteKeyframes($s, $mode){
-  $jump : 100 / (map-get($s, frames));
-  $frame    : 0;
-
-  $rows : if($mode == "vertical", map-get($s, cols) + 1, map-get($s, rows) + 1);
-  $cols : if($mode == "vertical", map-get($s, rows) + 1, map-get($s, cols) + 1);
-
-  @for $row from 1 to $rows {
-    @for $col from 1 to $cols {
-      $frame : $frame + 1;
-      #{$frame * $jump + '%'}{
-        top :#{($row - 1) * map-get($s, H) * -1 + 'px'};
-        left:#{($col - 1) * map-get($s, W) * -1 + 'px'};
-      }
-    }
-  }
-}
-
-.catSprite{
-  @include sprite($catSprite, 'cat');
-  margin:0; right:0; left:auto; top:auto;
-  animation:1.5s catSprint infinite linear;
-}
-
-
-@keyframes catSpriteAnim{
-  @include spriteKeyframes($catSprite, null);
-}
-
-@keyframes catSprint{
-  0%{ right:0; transform:translateX(100%); }
-  100%{ right:100%; transform:none; }
+#viewer {
+  width: 100%;
+  height: 100%;
 }
