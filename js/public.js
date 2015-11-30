@@ -1,13 +1,1 @@
-/**
- * @author      OA Wu <comdan66@gmail.com>
- * @copyright   Copyright (c) 2015 OA Wu Design
- */
-
-$(function () {
-    var viewer = new ThetaViewer (document.getElementById ('viewer'));
-    viewer.images = ["img/d.jpg"];
-    // viewer.images = ["imgs/R0013005.JPG", "imgs/R0013006.JPG", "imgs/R0013007.JPG"];
-    // viewer.interval = 200;
-    viewer.autoRotate = true;
-    viewer.load();
-});
+$(function(){var e=new ThetaViewer(document.getElementById("viewer"));e.images=["img/d.jpg"],e.autoRotate=!0,e.load()});
