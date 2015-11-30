@@ -5,7 +5,7 @@
 
 $(function () {
     var viewer = new ThetaViewer (document.getElementById ('viewer'));
-    viewer.images = ["img/c.jpg"];
+    viewer.images = ["img/d.jpg"];
     // viewer.images = ["imgs/R0013005.JPG", "imgs/R0013006.JPG", "imgs/R0013007.JPG"];
     // viewer.interval = 200;
     viewer.autoRotate = true;
