@@ -39,6 +39,7 @@
           if (_oldWidth !== _this.width || _oldHeight !== _this.height) {
             _oldWidth = _this.width;
             _oldHeight = _this.height;
+
             return _this.renderer.setSize(_this.width, _this.height);
           }
         };
